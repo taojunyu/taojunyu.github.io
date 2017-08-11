@@ -8,21 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>猿攻略-初识node.js | 陶俊宇的主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。 ###什么是node？    Node.js 是一个基">
+  <meta name="description" content="前言 Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。">
+<meta name="keywords" content="node.js, javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="猿攻略-初识node.js">
 <meta property="og:url" content="http://yoursite.com/2017/08/10/初识node-js/index.html">
 <meta property="og:site_name" content="陶俊宇的主页">
-<meta property="og:description" content="前言 Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。 ###什么是node？    Node.js 是一个基">
+<meta property="og:description" content="前言 Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。">
 <meta property="og:image" content="http://taojunyu.com/img/8_11_5.jpg">
 <meta property="og:image" content="http://taojunyu.com/img/8_11_1.jpg">
 <meta property="og:image" content="http://taojunyu.com/img/8_11_2.jpg">
 <meta property="og:image" content="http://taojunyu.com/img/8_11_3.jpg">
 <meta property="og:image" content="http://taojunyu.com/img/8_11_4.jpg">
-<meta property="og:updated_time" content="2017-08-11T13:16:35.940Z">
+<meta property="og:updated_time" content="2017-08-11T13:28:09.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猿攻略-初识node.js">
-<meta name="twitter:description" content="前言 Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。 ###什么是node？    Node.js 是一个基">
+<meta name="twitter:description" content="前言 Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。">
 <meta name="twitter:image" content="http://taojunyu.com/img/8_11_5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="陶俊宇的主页" type="application/atom+xml">
@@ -187,8 +188,8 @@ var _hmt = _hmt || [];
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="http://taojunyu.com/img/8_11_5.jpg" alt=""></p>
 <p>Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。</p>
-<p>###什么是node？  </p>
-<ul>
+<a id="more"></a>
+<h3 id="什么是node？"><a href="#什么是node？" class="headerlink" title="什么是node？"></a>什么是node？</h3><ul>
 <li>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 </li>
 <li>Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 </li>
 <li>Node.js 的包管理器 npm，是全球最大的开源库生态系统。</li>
@@ -202,10 +203,21 @@ var _hmt = _hmt || [];
 <li>游戏开发领域</li>
 <li>工具类应用</li>
 </ul>
-<h2 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h2><p>windows 32位： <a href="https://nodejs.org/dist/v6.11.2/node-v6.11.2-x86.msi" target="_blank" rel="external">https://nodejs.org/dist/v6.11.2/node-v6.11.2-x86.msi</a><br>windows 64位： <a href="https://nodejs.org/dist/v6.11.2/node-v6.11.2-x64.msi" target="_blank" rel="external">https://nodejs.org/dist/v6.11.2/node-v6.11.2-x64.msi</a></p>
-<p>centos </p>
-<h5 id="获取node-js资源"><a href="#获取node-js资源" class="headerlink" title="获取node.js资源"></a>获取node.js资源</h5><p>如果安装标准版本<br>安装说明 curl –silent –location <a href="https://rpm.nodesource.com/setup_4.x" target="_blank" rel="external">https://rpm.nodesource.com/setup_4.x</a> | bash -<br>如果安装最新版本<br>安装说明 curl –silent –location <a href="https://rpm.nodesource.com/setup_6.x" target="_blank" rel="external">https://rpm.nodesource.com/setup_6.x</a> | bash -</p>
-<h5 id="使用yum安装"><a href="#使用yum安装" class="headerlink" title="使用yum安装"></a>使用yum安装</h5><p>yum install -y nodejs<br>测试是否安装成功<br>node -v  </p>
+<h2 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h2><h4 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h4><p>32位： <a href="https://nodejs.org/dist/v6.11.2/node-v6.11.2-x86.msi" target="_blank" rel="external">https://nodejs.org/dist/v6.11.2/node-v6.11.2-x86.msi</a><br>64位： <a href="https://nodejs.org/dist/v6.11.2/node-v6.11.2-x64.msi" target="_blank" rel="external">https://nodejs.org/dist/v6.11.2/node-v6.11.2-x64.msi</a></p>
+<h4 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h4><h5 id="获取node-js资源"><a href="#获取node-js资源" class="headerlink" title="获取node.js资源"></a>获取node.js资源</h5><p>如果安装标准版本</p>
+<blockquote>
+<p>安装说明 curl –silent –location <a href="https://rpm.nodesource.com/setup_4.x" target="_blank" rel="external">https://rpm.nodesource.com/setup_4.x</a> | bash -</p>
+</blockquote>
+<p>如果安装最新版本</p>
+<blockquote>
+<p>安装说明 curl –silent –location <a href="https://rpm.nodesource.com/setup_6.x" target="_blank" rel="external">https://rpm.nodesource.com/setup_6.x</a> | bash -</p>
+</blockquote>
+<h5 id="使用yum安装"><a href="#使用yum安装" class="headerlink" title="使用yum安装"></a>使用yum安装</h5><blockquote>
+<p>yum install -y nodejs  </p>
+</blockquote>
+<h5 id="测试是否安装成功"><a href="#测试是否安装成功" class="headerlink" title="测试是否安装成功"></a>测试是否安装成功</h5><blockquote>
+<p>node -v  </p>
+</blockquote>
 <h2 id="node的特点"><a href="#node的特点" class="headerlink" title="node的特点"></a>node的特点</h2><p>node是一个javascript运行环境，实质是对Chrome V8进行封装。Node的作者Ryan Dahl最初的想法是开发一个web服务器，但渐渐的变成构建网络应用的一个基础框架。<br>node实现的语言是javascript，这意味着它拥有大量的开发者支持，也奠定了node社区的活跃日常。</p>
 <h4 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h4><p>异步这个概念是node的一大特点，也是新手入门的门槛之一。<br>举个现实中的小例子：<br>欧阳小明要从云盘下载个小视频，同步就是小明在电脑前等着，异步就是小明不管下载这事了，听到“叮”的一声再回来继续接下来的事。<br>看一个小异步的例子<br><img src="http://taojunyu.com/img/8_11_1.jpg" alt=""><br>“为什么是aaa？不是已经改成bbb了吗？”<br>因为异步执行的缘故，上面我通过设置一个延时（setTimeout）来模拟IO的耗时。当执行a函数时，里面的回调函数并不会立即执行，这是异步的调用。其实最后K变量的值已经改成‘bbb’了，只是已经执行过打印语句不会打印出来了。<br>这里的定时器其实并不是严格的精确的。setTimeout我设置的是100ms但实际上它用稍微超过100ms，创建定时器的时候会插入定时器观察者内部的红黑树中，每个轮询都来迭代的检查一下是否超时，但由于前面事件的处理耗时，再次等到它的时候可能已经过100ms了。</p>
 <h4 id="事件和回调"><a href="#事件和回调" class="headerlink" title="事件和回调"></a>事件和回调</h4><p>接着上面的例子，“叮”的一声就是一个事件，小明通过“监听”这个事件而返回来继续接下来的事，这个“做接下来的事”则是一个“回调”。</p>
@@ -221,7 +233,13 @@ var _hmt = _hmt || [];
 <li>大量计算占用CPU导致无法继续调用异步I/O。</li>
 </ul>
 <p>还是那句话，“没有最强的角色只有最强的玩家” ，充分的理解node的机制能让我们把这个技术做到最好。</p>
-<h2 id="node的事件轮询机制"><a href="#node的事件轮询机制" class="headerlink" title="node的事件轮询机制"></a>node的事件轮询机制</h2><p>Node.js 使用事件驱动模型，当web server接收到请求，就把它关闭然后进行处理，然后去服务下一个web请求。<br>当这个请求完成，它被放回处理队列，当到达队列开头，这个结果被返回给用户。<br>这个模型非常高效可扩展性非常强，因为webserver一直接受请求而不等待任何读写操作。（这也被称之为非阻塞式IO或者事件驱动IO）<br>在事件驱动模型中，会生成一个主循环来监听事件，当检测到事件时触发回调函数。<br><img src="http://taojunyu.com/img/8_11_2.jpg" alt=""><br>用一段代码来说明一下<br><img src="http://taojunyu.com/img/8_11_3.jpg" alt=""><br>这里我写了两个函数，a（），b（）。而这里面我都套了两层回调，打印abcdef几个字母，然后为了效果更明显，我都加上了长延时。<br><img src="http://taojunyu.com/img/8_11_4.jpg" alt=""><br>这可以看出node的轮询队列的执行了，每一个回调的触发都会插入队列的尾端等待执行.</p>
+<h2 id="node的事件轮询机制"><a href="#node的事件轮询机制" class="headerlink" title="node的事件轮询机制"></a>node的事件轮询机制</h2><p>Node.js 使用事件驱动模型，当web server接收到请求，就把它关闭然后进行处理，然后去服务下一个web请求。<br>当这个请求完成，它被放回处理队列，当到达队列开头，这个结果被返回给用户。<br>这个模型非常高效可扩展性非常强，因为webserver一直接受请求而不等待任何读写操作。（这也被称之为非阻塞式IO或者事件驱动IO）<br>在事件驱动模型中，会生成一个主循环来监听事件，当检测到事件时触发回调函数。  </p>
+<p><img src="http://taojunyu.com/img/8_11_2.jpg" alt="">  </p>
+<p>用一段代码来说明一下  </p>
+<p><img src="http://taojunyu.com/img/8_11_3.jpg" alt="">  </p>
+<p>这里我写了两个函数，a（），b（）。而这里面我都套了两层回调，打印abcdef几个字母，然后为了效果更明显，我都加上了长延时。  </p>
+<p><img src="http://taojunyu.com/img/8_11_4.jpg" alt="">  </p>
+<p>这可以看出node的轮询队列的执行了，每一个回调的触发都会插入队列的尾端等待执行.</p>
 
       
 
@@ -230,6 +248,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node.js, javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -430,6 +459,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github pages, blogger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node.js, javascript</a>
               </li>
             
             <div class="clearfix"></div>
