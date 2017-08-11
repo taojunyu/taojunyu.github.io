@@ -6,27 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>在github搭建个人博客 | 陶俊宇的主页</title>
+  <title>猿攻略-初识node.js | 陶俊宇的主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言:什么是github pages？   github pages最原始的用意是用来展示你的repo，当然你可以用来写博客、开车放资源、写个看起来超厉害的静态网页给妹子（前提有个妹子愿意看…）。本质上就是给你提供了一个服务器支持，你可以在上面搭一些静态的网页，别太大就好。github pages官方介绍">
-<meta name="keywords" content="github pages, blogger">
+  <meta name="description" content="前言 Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。 ###什么是node？    Node.js 是一个基">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在github搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2017/08/08/在github搭建个人博客/index.html">
+<meta property="og:title" content="猿攻略-初识node.js">
+<meta property="og:url" content="http://yoursite.com/2017/08/10/初识node-js/index.html">
 <meta property="og:site_name" content="陶俊宇的主页">
-<meta property="og:description" content="前言:什么是github pages？   github pages最原始的用意是用来展示你的repo，当然你可以用来写博客、开车放资源、写个看起来超厉害的静态网页给妹子（前提有个妹子愿意看…）。本质上就是给你提供了一个服务器支持，你可以在上面搭一些静态的网页，别太大就好。github pages官方介绍">
-<meta property="og:image" content="http://taojunyu.com/img/8_8_1.JPG">
-<meta property="og:image" content="http://taojunyu.com/img/8_8_2.JPG">
-<meta property="og:image" content="http://taojunyu.com/img/8_8_3.JPG">
-<meta property="og:image" content="http://taojunyu.com/img/8_8_4.JPG">
-<meta property="og:image" content="http://taojunyu.com/img/8_8_5.JPG">
-<meta property="og:image" content="http://taojunyu.com/img/8_8_6.JPG">
-<meta property="og:image" content="http://taojunyu.com/img/8_8_7.JPG">
-<meta property="og:updated_time" content="2017-08-10T15:39:10.389Z">
+<meta property="og:description" content="前言 Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。 ###什么是node？    Node.js 是一个基">
+<meta property="og:image" content="http://taojunyu.com/img/8_11_5.jpg">
+<meta property="og:image" content="http://taojunyu.com/img/8_11_1.jpg">
+<meta property="og:image" content="http://taojunyu.com/img/8_11_2.jpg">
+<meta property="og:image" content="http://taojunyu.com/img/8_11_3.jpg">
+<meta property="og:image" content="http://taojunyu.com/img/8_11_4.jpg">
+<meta property="og:updated_time" content="2017-08-11T13:16:35.940Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在github搭建个人博客">
-<meta name="twitter:description" content="前言:什么是github pages？   github pages最原始的用意是用来展示你的repo，当然你可以用来写博客、开车放资源、写个看起来超厉害的静态网页给妹子（前提有个妹子愿意看…）。本质上就是给你提供了一个服务器支持，你可以在上面搭一些静态的网页，别太大就好。github pages官方介绍">
-<meta name="twitter:image" content="http://taojunyu.com/img/8_8_1.JPG">
+<meta name="twitter:title" content="猿攻略-初识node.js">
+<meta name="twitter:description" content="前言 Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。 ###什么是node？    Node.js 是一个基">
+<meta name="twitter:image" content="http://taojunyu.com/img/8_11_5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="陶俊宇的主页" type="application/atom+xml">
   
@@ -168,75 +165,63 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-在github搭建个人博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-初识node-js" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      在github搭建个人博客
+      猿攻略-初识node.js
     </h1>
   
 
         
-        <a href="/2017/08/08/在github搭建个人博客/" class="archive-article-date">
-  	<time datetime="2017-08-08T13:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-08</time>
+        <a href="/2017/08/10/初识node-js/" class="archive-article-date">
+  	<time datetime="2017-08-10T12:07:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h2><h3 id="什么是github-pages？"><a href="#什么是github-pages？" class="headerlink" title="什么是github pages？"></a>什么是github pages？</h3><p><img src="http://taojunyu.com/img/8_8_1.JPG" alt="官方描述">  </p>
-<p>github pages最原始的用意是用来展示你的repo，当然你可以用来写博客、开车放资源、写个看起来超厉害的静态网页给妹子（前提有个妹子愿意看…）。本质上就是给你提供了一个服务器支持，你可以在上面搭一些静态的网页，别太大就好。<br><a href="https://github.com/blog/272-github-pages" target="_blank" rel="external">github pages官方介绍</a><br><br><a id="more"></a></p>
-<h3 id="github-pages的优点？"><a href="#github-pages的优点？" class="headerlink" title="github pages的优点？"></a>github pages的优点？</h3><ul>
-<li>首先免费啊！安全啊！</li>
-<li>全是静态文件，访问速度快；</li>
-<li>博客内容可以轻松打包、转移、发布到其它平台；</li>
-</ul>
-<p><strong>在开始之前需要准备的几项工作:</strong><br></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="http://taojunyu.com/img/8_11_5.jpg" alt=""></p>
+<p>Node近几年来在国内也备受关注，Yahoo，Microsoft许多应用分分迁移至node。国内阿里，网易，新浪，百度也开始将一些线上应用改成node。以node为基底的应用也受到了极大的好评，如实施通信的Socket.io、网络爬虫Cheerio、Web博客Hexo等等。为了让更多的小伙伴能了解node，笔者就小小的介绍一下node。</p>
+<p>###什么是node？  </p>
 <ul>
-<li>安装node.js、npm；  </li>
-<li>注册github账号；  </li>
-<li>安装git for windows。  </li>
+<li>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。 </li>
+<li>Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 </li>
+<li>Node.js 的包管理器 npm，是全球最大的开源库生态系统。</li>
 </ul>
-<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p>hexo是一个博客框架，能自动将支持类型的文件转换成静态网页。如果是每写完一篇文章都要自己手动更新的页面的话，是人都会被逼疯的，所以hexo大法好。<br>hexo依赖少（仅依赖node.js），安装方便，主题华丽;<br>假设你已经完成了上面的一项准备工作，那么打开git bash或者cmd<br><strong>使用npm（node.js package manager）安装hexo：</strong><br><code>npm install -g hexo</code><br><strong>初始化</strong><br>切换到一个目录下，这个目录用于存放代码，比如我的是d:/hexo<br><code>cd d:/hexo</code><br>然后<br><code>hexo init</code><br>hexo会自动在这个目录下，安放代码<br><img src="http://taojunyu.com/img/8_8_2.JPG" alt=""><br>如果你是之前就安装过node.js的话，这里可能会报错提示node.js版本太低，将node.js更新到最新再来执行一遍就可以了。<br><strong>启动服务</strong><br><code>hexo g</code> （或者 hexo generate）#生成静态页面至public目录<br><code>hexo s</code>（或者 hexo server）#开启本地预览服务，默认端口4000<br>然后在浏览器上访问本地地址：<br><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br>初始的页面大概是这个样子，嗯，有点丑orz<br><img src="http://taojunyu.com/img/8_8_3.JPG" alt=""><br>我们在之后对页面进行调整的时候可以先在本地修改满意后再往上推。  </p>
-<h2 id="在github上创建仓库"><a href="#在github上创建仓库" class="headerlink" title="在github上创建仓库"></a>在github上创建仓库</h2><h3 id="新建一个-yourname-github-io的仓库-，"><a href="#新建一个-yourname-github-io的仓库-，" class="headerlink" title="新建一个{yourname}.github.io的仓库 ，"></a>新建一个{yourname}.github.io的仓库 ，</h3><p>这里的{yourname}代表你的github用户名，比如说你的用户名是xiaoming，这里就换成xiaoming.github.io。<strong>名字错了无效。</strong><br><strong>需要注意的地方：</strong>  </p>
-<ul>
-<li>注册的邮箱需要验证一下；</li>
-<li>仓库名需要是username.github.io，其中username是你的用户名；</li>
-<li>仓库创建成功不会立即生效，需要过一段时间。  </li>
+<h3 id="node的应用场景"><a href="#node的应用场景" class="headerlink" title="node的应用场景"></a>node的应用场景</h3><ul>
+<li>前后端编程语言环境统一的环境</li>
+<li>Node带来的高性能I/O用于实时应用</li>
+<li>并行I/O使得使用者更高效地利用分布式环境</li>
+<li>并行I/O,有效利用稳定接口提升web渲染能力</li>
+<li>云计算平台提供Node支持</li>
+<li>游戏开发领域</li>
+<li>工具类应用</li>
 </ul>
-<h3 id="配置ssh-key"><a href="#配置ssh-key" class="headerlink" title="配置ssh key"></a>配置ssh key</h3><p>将代码提交上github必须拥有权限才行，使用ssh key能帮助我们解决本地和服务器的连接权限问题。<br><code>cd ~/. ssh</code> 检查本机已存在的ssh密钥<br><strong>如果提示：</strong>No such file or directory 说明你是第一次使用git<br><code>ssh-keygen -t rsa -C &quot;邮件地址&quot;</code><br>之后的信息可以全部用默认的，<strong>连续3次回车</strong>就行。<br>然后再.ssh目录中打开id_rsa.pub文件，<br><code>vim id_rsa.pub</code>  </p>
-<p>复制里面的全部内容<br>打开你的github主页，点击头像旁的下三角，-&gt;settings-&gt;SSH and GPG keys-&gt;New SSH key<br>输入title，再把之前复制的id_rsa.pub内容粘贴到key中，点击Add SSH key<br><img src="http://taojunyu.com/img/8_8_4.JPG" alt=""><br>测试是否成功<br><code>ssh -T git@github.com // 注意邮箱地址不用改</code><br>看到提示Are you sure you want to continue connecting (yes/no)?，输入yes，接下来显示：</p>
+<h2 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h2><p>windows 32位： <a href="https://nodejs.org/dist/v6.11.2/node-v6.11.2-x86.msi" target="_blank" rel="external">https://nodejs.org/dist/v6.11.2/node-v6.11.2-x86.msi</a><br>windows 64位： <a href="https://nodejs.org/dist/v6.11.2/node-v6.11.2-x64.msi" target="_blank" rel="external">https://nodejs.org/dist/v6.11.2/node-v6.11.2-x64.msi</a></p>
+<p>centos </p>
+<h5 id="获取node-js资源"><a href="#获取node-js资源" class="headerlink" title="获取node.js资源"></a>获取node.js资源</h5><p>如果安装标准版本<br>安装说明 curl –silent –location <a href="https://rpm.nodesource.com/setup_4.x" target="_blank" rel="external">https://rpm.nodesource.com/setup_4.x</a> | bash -<br>如果安装最新版本<br>安装说明 curl –silent –location <a href="https://rpm.nodesource.com/setup_6.x" target="_blank" rel="external">https://rpm.nodesource.com/setup_6.x</a> | bash -</p>
+<h5 id="使用yum安装"><a href="#使用yum安装" class="headerlink" title="使用yum安装"></a>使用yum安装</h5><p>yum install -y nodejs<br>测试是否安装成功<br>node -v  </p>
+<h2 id="node的特点"><a href="#node的特点" class="headerlink" title="node的特点"></a>node的特点</h2><p>node是一个javascript运行环境，实质是对Chrome V8进行封装。Node的作者Ryan Dahl最初的想法是开发一个web服务器，但渐渐的变成构建网络应用的一个基础框架。<br>node实现的语言是javascript，这意味着它拥有大量的开发者支持，也奠定了node社区的活跃日常。</p>
+<h4 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h4><p>异步这个概念是node的一大特点，也是新手入门的门槛之一。<br>举个现实中的小例子：<br>欧阳小明要从云盘下载个小视频，同步就是小明在电脑前等着，异步就是小明不管下载这事了，听到“叮”的一声再回来继续接下来的事。<br>看一个小异步的例子<br><img src="http://taojunyu.com/img/8_11_1.jpg" alt=""><br>“为什么是aaa？不是已经改成bbb了吗？”<br>因为异步执行的缘故，上面我通过设置一个延时（setTimeout）来模拟IO的耗时。当执行a函数时，里面的回调函数并不会立即执行，这是异步的调用。其实最后K变量的值已经改成‘bbb’了，只是已经执行过打印语句不会打印出来了。<br>这里的定时器其实并不是严格的精确的。setTimeout我设置的是100ms但实际上它用稍微超过100ms，创建定时器的时候会插入定时器观察者内部的红黑树中，每个轮询都来迭代的检查一下是否超时，但由于前面事件的处理耗时，再次等到它的时候可能已经过100ms了。</p>
+<h4 id="事件和回调"><a href="#事件和回调" class="headerlink" title="事件和回调"></a>事件和回调</h4><p>接着上面的例子，“叮”的一声就是一个事件，小明通过“监听”这个事件而返回来继续接下来的事，这个“做接下来的事”则是一个“回调”。</p>
 <blockquote>
-<p>Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+<p>var http = require(‘http’);<br>var querystring = require(‘querystring’);</p>
+<p>// 侦听服务器的request事件<br>http.createServer(function (req, res) {<br>&emsp;&emsp;var postData = ‘’;<br>&emsp;&emsp;req.setEncoding(‘utf8’);<br>  // 侦听请求的data事件<br>&emsp;req.on(‘data’, function (chunk) {<br>&emsp;&emsp;postData += chunk;<br>&emsp;});<br>  // 侦听请求的end事件<br>&emsp;req.on(‘end’, function () {<br>&emsp;&emsp;res.end(postData);<br>&emsp;});<br>}).listen(8080);<br>console.log(‘服务器启动完成’);  </p>
 </blockquote>
-<p>表示ssh已经配置成功，<br>接着还需要配置：<br><code>git config --global user.name &quot;taojunyu&quot;// 你的github用户名，非昵称</code><br><code>git config --global user.email  &quot;xxx@qq.com&quot;// 填写你的github注册邮箱</code></p>
-<p>以上完成之后，我们就可以来写自己的博客<br>在之前hexo初始化的目录下我们可以找到两种_config.yml文件，一个是根目录下的全局的_config.yml，一个是各个theme下的；  </p>
-<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>我们可以在<a href="https://hexo.io/themes/" target="_blank" rel="external">官方主题</a>中找自己喜欢的，也可以在github里找<br>比如要用以下主题<br><img src="http://taojunyu.com/img/8_8_5.JPG" alt=""><br>首先将主题克隆到本地:</p>
-<p><code>cd d:/hexo</code><br><code>git clone https://github.com/Haojen/hexo-theme-Claudia themes/Claudia</code></p>
-<p>主题会被下载到这个目录下</p>
-<p><img src="http://taojunyu.com/img/8_8_6.JPG" alt="">  </p>
-<p>在根目录的_config.yml里，找到theme: landscape，改成theme: Claudia，然后hexo g来生成。<br>如果出现一些莫名其妙的问题，可以先执行hexo clean来清理一下public的内容，然后再来重新生成和发布。<br>在各个theme下的_config.yml可以更改更具体的页面内容。</p>
-<p><b>_config.yml有几点需要注意的:</b></p>
+<p>以上node的代码是创建一个监听8080端口的服务器并侦听这request的事件。<br>‘data’,’end’就是事件，而之后执行的function(){···}就是回调函数。</p>
+<h4 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h4><p>在node中使用的是单线程，javascript的线程是无法与其他的线程共享任何状态的。这样的好处是不用像其他的多线程编程那么时时刻刻在意线程的状态同步问题，没有死锁，没有线程切换带来的花销，这足以吸引很多程序员去尝试node了。在体验node单线程好处的同时也必须了解单线程的弱点：</p>
 <ul>
-<li>冒号后面必须有一个空格，否则可能会出问题。</li>
-<li>theme中的_config.yml中使用回车也可能被坑。</li>
+<li>无法利用多核cpu（在不使用集群的情况下）</li>
+<li>错误会引起整个程序的退出</li>
+<li>大量计算占用CPU导致无法继续调用异步I/O。</li>
 </ul>
-<p>增加文章<br><code>hexo new &quot;postName&quot; #新建文章</code><br>然后用编辑器打开编辑就好<br>在将自己的主页修改好之后，就需要上传到github上。<br>配置_config.yml中有关deploy的部分：<br><code>deploy:
-  type: git
-  repository: git@github.com:taojunyu/taojunyu.github.io.git
-  branch: master</code><br><strong>注意:</strong><br><code>deploy:
-  type: github
-  repository: https://github.com/liuxianan/liuxianan.github.io.git
-  branch: master</code><br>这种hexo2.x的写法，现在是不可以的<br>然后直接执行hexo d的话，可能会报以下错误：  </p>
-<blockquote>
-<p>Deployer not found: github 或者 Deployer not found: git</p>
-</blockquote>
-<p>可以再安装一个包来解决：<br>npm install hexo-deployer-git –save<br>安装的时候可能会报一个权限不够的错误，这时切换到root/administrator用户再次执行命令就可以了。<br>然后<br><code>hexo d</code><br>没有报错就ok了<br>这时你可以通过{yourname}.github.io访问你的主页了。<br>再接着你还觉得{yourname}.github.io太low，可以自己去买个域名，然后绑定到github上。</p>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>先在你的github项目的更目录下创建一个CNAME无后缀的文件，里面填写你的域名。<br>ping一下你的{yourname}.github.io，查看ip。<br>然后到你域名提供商上去配置DNS解析<br><img src="http://taojunyu.com/img/8_8_7.JPG" alt=""><br>CNAME类型，主机记录为www，记录值填{yourname}.github.io<br>A类型，主机记录为@，记录值填之前的ip值<br>然后就等吧，这个<strong>不是立刻生效</strong>的，大概15分钟这样就没问题了。<br>你这时可以通过自己的域名来访问自己的主页了</p>
+<p>还是那句话，“没有最强的角色只有最强的玩家” ，充分的理解node的机制能让我们把这个技术做到最好。</p>
+<h2 id="node的事件轮询机制"><a href="#node的事件轮询机制" class="headerlink" title="node的事件轮询机制"></a>node的事件轮询机制</h2><p>Node.js 使用事件驱动模型，当web server接收到请求，就把它关闭然后进行处理，然后去服务下一个web请求。<br>当这个请求完成，它被放回处理队列，当到达队列开头，这个结果被返回给用户。<br>这个模型非常高效可扩展性非常强，因为webserver一直接受请求而不等待任何读写操作。（这也被称之为非阻塞式IO或者事件驱动IO）<br>在事件驱动模型中，会生成一个主循环来监听事件，当检测到事件时触发回调函数。<br><img src="http://taojunyu.com/img/8_11_2.jpg" alt=""><br>用一段代码来说明一下<br><img src="http://taojunyu.com/img/8_11_3.jpg" alt=""><br>这里我写了两个函数，a（），b（）。而这里面我都套了两层回调，打印abcdef几个字母，然后为了效果更明显，我都加上了长延时。<br><img src="http://taojunyu.com/img/8_11_4.jpg" alt=""><br>这可以看出node的轮询队列的执行了，每一个回调的触发都会插入队列的尾端等待执行.</p>
 
       
 
@@ -245,17 +230,6 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github pages, blogger</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -306,7 +280,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/08/在github搭建个人博客/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/10/初识node-js/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -320,18 +294,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/08/10/初识node-js/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          猿攻略-初识node.js
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2017/08/08/在github搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在github搭建个人博客</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -361,7 +326,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="在github搭建个人博客" ></div> 
+  <div id="SOHUCS" sid="初识node-js" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cysX3aGWt"; 
