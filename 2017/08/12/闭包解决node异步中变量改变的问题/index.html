@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | 陶俊宇的主页</title>
+  <title>闭包解决node异步中变量改变的问题 | 陶俊宇的主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="在node的开发过程中异步编程经常会给我们带来一些坑，最常见的还是当回调函数执行的时候输入的参数已经发生改变。对于刚刚接触异步编程的人来说这个问题用带来很大的困扰。让小猿来介绍介绍如何用闭包解决这个问题吧。 闭包什么是闭包？在JavaScript中，实现外部作用域访问内部作用域中变量的方法叫做闭包（closure）。我们都知道作用域上的对象访问只能向上，而不能向下。即函数内可以调用函数外的变量，而">
+<meta name="keywords" content="node.js， javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/08/03/hello-world/index.html">
+<meta property="og:title" content="闭包解决node异步中变量改变的问题">
+<meta property="og:url" content="http://yoursite.com/2017/08/12/闭包解决node异步中变量改变的问题/index.html">
 <meta property="og:site_name" content="陶俊宇的主页">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-08-03T03:56:43.198Z">
+<meta property="og:description" content="在node的开发过程中异步编程经常会给我们带来一些坑，最常见的还是当回调函数执行的时候输入的参数已经发生改变。对于刚刚接触异步编程的人来说这个问题用带来很大的困扰。让小猿来介绍介绍如何用闭包解决这个问题吧。 闭包什么是闭包？在JavaScript中，实现外部作用域访问内部作用域中变量的方法叫做闭包（closure）。我们都知道作用域上的对象访问只能向上，而不能向下。即函数内可以调用函数外的变量，而">
+<meta property="og:image" content="http://taojunyu.com/img/8_12_1.jpg">
+<meta property="og:image" content="http://taojunyu.com/img/8_12_2.jpg">
+<meta property="og:image" content="http://taojunyu.com/img/8_12_3.jpg">
+<meta property="og:updated_time" content="2017-08-12T16:06:43.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="闭包解决node异步中变量改变的问题">
+<meta name="twitter:description" content="在node的开发过程中异步编程经常会给我们带来一些坑，最常见的还是当回调函数执行的时候输入的参数已经发生改变。对于刚刚接触异步编程的人来说这个问题用带来很大的困扰。让小猿来介绍介绍如何用闭包解决这个问题吧。 闭包什么是闭包？在JavaScript中，实现外部作用域访问内部作用域中变量的方法叫做闭包（closure）。我们都知道作用域上的对象访问只能向上，而不能向下。即函数内可以调用函数外的变量，而">
+<meta name="twitter:image" content="http://taojunyu.com/img/8_12_1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="陶俊宇的主页" type="application/atom+xml">
   
@@ -159,35 +164,43 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-闭包解决node异步中变量改变的问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      闭包解决node异步中变量改变的问题
     </h1>
   
 
         
-        <a href="/2017/08/03/hello-world/" class="archive-article-date">
-  	<time datetime="2017-08-03T03:56:43.194Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
+        <a href="/2017/08/12/闭包解决node异步中变量改变的问题/" class="archive-article-date">
+  	<time datetime="2017-08-12T14:40:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>在node的开发过程中异步编程经常会给我们带来一些坑，最常见的还是当回调函数执行的时候输入的参数已经发生改变。<br>对于刚刚接触异步编程的人来说这个问题用带来很大的困扰。让小猿来介绍介绍如何用闭包解决这个问题吧。</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>什么是闭包？<br>在JavaScript中，实现外部作用域访问内部作用域中变量的方法叫做<strong>闭包（closure）</strong>。<br>我们都知道作用域上的对象访问只能向上，而不能向下。即函数内可以调用函数外的变量，而函数外部是无法访问函数内部的变量。<br>闭包利用的是javascript中函数可以作为参数和返回值的特性。<br>通俗的举个例子：<br>小明因为某件事惹得父亲非常生气，当他千里迢迢从德国的医院回到家乡十分想知道父亲的气是否消减，但又不能进家门。于是小明就把母亲叫出来询问，父亲的状态。<br><img src="http://taojunyu.com/img/8_12_1.jpg" alt=""></p>
+<p>这就是闭包的原理，无法直接访问到目标变量就通过指向目标变量的内部函数来获取它。</p>
+<blockquote>
+<p>var func = function () {<br>&emsp;var a = function () {<br>&emsp;&emsp;var local = “局部变量”;<br>&emsp;&emsp;return function () {<br>&emsp;&emsp;&emsp;return local;<br>&emsp;&emsp;};<br>　};<br>&emsp;var b = a();<br>&emsp;console.log(b());<br>};</p>
+</blockquote>
+<p>这里就是通过函数b来访问局部变量，当执行完函数a的时候，内部的局部变量按理来说是会与作用域的销毁而被释放掉的，但这里因为a函数仍然被其他的变量引用着所以不会被销毁，其局部变量也得以保留。</p>
+<p>来看看node.js中异步带来的问题<br>定义一个数组和一个含回调的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fruit = [<span class="string">"Watermelon"</span>, <span class="string">"Pear"</span>, <span class="string">"Banana"</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Saw</span>(<span class="params">logMsg, callback</span>)</span>&#123;</div><div class="line">    process.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        callback(logMsg);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果我们想将数组里的元素全部拿出来，按一下写法  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> idx <span class="keyword">in</span> fruit)&#123;</div><div class="line">    <span class="keyword">var</span> message = <span class="string">"Saw a "</span>+ fruit[idx];</div><div class="line">    Saw(message, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"Normal Callback: "</span>+ message);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>发现和我们预期的差了一大截<br><img src="http://taojunyu.com/img/8_12_2.jpg" alt=""><br>原因自然是当打印函数执行的时候，循环已经执行结束了。</p>
+<p>如果需要按循序打印出数组的元素，正确的写法应该是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> idx <span class="keyword">in</span> fruit)&#123;</div><div class="line">    <span class="keyword">var</span> message = <span class="string">"Saw a "</span>+ fruit[idx];</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</div><div class="line">        Saw(msg, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"Closure Callback: "</span> + msg);</div><div class="line">        &#125;)</div><div class="line">    &#125;)(message)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<p><img src="http://taojunyu.com/img/8_12_3.jpg" alt=""></p>
+<p>其实可以看出来，以上闭包的效果就和java中的构建静态变量是一样的。</p>
 
       
 
@@ -196,6 +209,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node.js， javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -246,7 +270,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/03/hello-world/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/12/闭包解决node异步中变量改变的问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,15 +284,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/08/08/在github搭建个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          在github搭建个人博客
-        
-      </div>
-    </a>
   
+    <a href="/2017/08/10/初识node-js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">记录系列-初识node.js</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -296,7 +316,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="hello-world" ></div> 
+  <div id="SOHUCS" sid="闭包解决node异步中变量改变的问题" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cysX3aGWt"; 
