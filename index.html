@@ -157,6 +157,83 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Android中activity的生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/27/Android中activity的生命周期/">Android中activity的生命周期</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/27/Android中activity的生命周期/" class="archive-article-date">
+  	<time datetime="2017-12-27T12:35:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为很久没有碰android了导致上次面试时一些非常基础的问题都已经记不清了，尴尬，对于activity的生命周期的理解在android开发中至关重要，这里做个整理，也当是复习。</p>
+<h2 id="Activity的四种活动状态"><a href="#Activity的四种活动状态" class="headerlink" title="Activity的四种活动状态"></a>Activity的四种活动状态</h2><p>android中使用<b>“返回栈”</b>管理activity。栈都很熟悉了，一种单向开口、先进后出的数据结构。我们能看到的activity都位于栈顶，每当我们按下back键或者调用finish（）时，将移除栈顶activity。<br><br>activity只会存在以下4种活动状态：<br>
+        
+          <a class="article-more-a" href="/2017/12/27/Android中activity的生命周期/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/27/Android中activity的生命周期/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的简历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -330,22 +407,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在node的开发过程中异步编程经常会给我们带来一些坑，最常见的还是当回调函数执行的时候输入的参数已经发生改变。<br>对于刚刚接触异步编程的人来说这个问题用带来很大的困扰。让小猿来介绍介绍如何用闭包解决这个问题吧。</p>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h3><p>在JavaScript中，实现外部作用域访问内部作用域中变量的方法叫做<strong>闭包（closure）</strong>。<br>我们都知道作用域上的对象访问只能向上，而不能向下。即函数内可以调用函数外的变量，而函数外部是无法访问函数内部的变量。<br>闭包利用的是javascript中函数可以作为参数和返回值的特性。</p>
-<h3 id="通俗的举个例子："><a href="#通俗的举个例子：" class="headerlink" title="通俗的举个例子："></a>通俗的举个例子：</h3><p>小明因为某件事惹得父亲非常生气，当他千里迢迢从德国的医院回到家乡十分想知道父亲的气是否消减，但又不能进家门。于是小明就把母亲叫出来询问，父亲的状态。<br><img src="http://taojunyu.com/img/8_12_1.jpg" alt=""></p>
-<p>这就是闭包的原理，无法直接访问到目标变量就通过指向目标变量的内部函数来获取它。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> local = <span class="string">"局部变量"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> local;</div><div class="line">    &#125;;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">var</span> b = a();</div><div class="line">  <span class="built_in">console</span>.log(b());</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>这里就是通过函数b来访问局部变量，当执行完函数a的时候，内部的局部变量按理来说是会与作用域的销毁而被释放掉的，但这里因为a函数仍然被其他的变量引用着所以不会被销毁，其局部变量也得以保留。</p>
-<p>来看看node.js中异步带来的问题<br>这里定义一个数组和一个含回调的函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fruit = [<span class="string">"Watermelon"</span>, <span class="string">"Pear"</span>, <span class="string">"Banana"</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Saw</span>(<span class="params">logMsg, callback</span>)</span>&#123;</div><div class="line">    process.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        callback(logMsg);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果我们想将数组里的元素全部拿出来，按一下写法  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> idx <span class="keyword">in</span> fruit)&#123;</div><div class="line">    <span class="keyword">var</span> message = <span class="string">"Saw a "</span>+ fruit[idx];</div><div class="line">    Saw(message, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"Normal Callback: "</span>+ message);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>发现和我们预期的差了一大截<br><img src="http://taojunyu.com/img/8_12_2.JPG" alt=""><br>原因自然是当打印函数执行的时候，循环已经执行结束了。</p>
-<p>如果需要按循序打印出数组的元素，正确的写法应该是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> idx <span class="keyword">in</span> fruit)&#123;</div><div class="line">    <span class="keyword">var</span> message = <span class="string">"Saw a "</span>+ fruit[idx];</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</div><div class="line">        Saw(msg, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"Closure Callback: "</span> + msg);</div><div class="line">        &#125;)</div><div class="line">    &#125;)(message)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结果如下：</p>
-<p><img src="http://taojunyu.com/img/8_12_3.JPG" alt=""></p>
-<p>其实可以看出来，以上闭包的效果就和java中的构建静态变量是一样的。</p>
-
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h3><p>在JavaScript中，实现外部作用域访问内部作用域中变量的方法叫做<strong>闭包（closure）</strong>。<br>我们都知道作用域上的对象访问只能向上，而不能向下。即函数内可以调用函数外的变量，而函数外部是无法访问函数内部的变量。<br>闭包利用的是javascript中函数可以作为参数和返回值的特性。<br>
+        
+          <a class="article-more-a" href="/2017/08/12/闭包解决node异步中变量改变的问题/#more">more >></a>
+        
       
 
       
@@ -552,77 +617,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/03/hello-world/" class="archive-article-date">
-  	<time datetime="2017-08-03T03:56:43.194Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/03/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -716,14 +710,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node.js, javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github pages, blogger</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
@@ -733,6 +719,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node.js， javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github pages, blogger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node.js, javascript</a>
               </li>
             
             <div class="clearfix"></div>
