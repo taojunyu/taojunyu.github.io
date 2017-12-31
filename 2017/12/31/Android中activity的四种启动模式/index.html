@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Android的四种启动模式 | 陶俊宇的主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。 standardactivity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会">
+  <meta name="description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android的四种启动模式">
 <meta property="og:url" content="http://yoursite.com/2017/12/31/Android中activity的四种启动模式/index.html">
 <meta property="og:site_name" content="陶俊宇的主页">
-<meta property="og:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。 standardactivity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会">
+<meta property="og:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。">
 <meta property="og:image" content="http://taojunyu.com/img/standard">
 <meta property="og:image" content="http://taojunyu.com/img/singleTop">
 <meta property="og:image" content="http://taojunyu.com/img/singleTask">
 <meta property="og:image" content="http://taojunyu.com/img/singleInstance">
-<meta property="og:updated_time" content="2017-12-31T16:56:22.829Z">
+<meta property="og:updated_time" content="2017-12-31T16:58:14.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android的四种启动模式">
-<meta name="twitter:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。 standardactivity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会">
+<meta name="twitter:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。">
 <meta name="twitter:image" content="http://taojunyu.com/img/standard">
   
     <link rel="alternative" href="/atom.xml" title="陶俊宇的主页" type="application/atom+xml">
@@ -184,7 +184,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。<br><br>activity有四种启动模式：standard、singleTop、singleTask、singleInstance。</p>
+        <p>Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。<br><br>activity有四种启动模式：standard、singleTop、singleTask、singleInstance。<br><a id="more"></a></p>
 <h3 id="standard"><a href="#standard" class="headerlink" title="standard"></a>standard</h3><p>activity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会在乎栈中是否已经存在此activity，每次都会生成新的实例。<br><img src="http://taojunyu.com/img/standard" alt=""></p>
 <h3 id="singleTop"><a href="#singleTop" class="headerlink" title="singleTop"></a>singleTop</h3><p>当发现启动的activity已经位于栈顶的时候就不再创建新实例，而是直接使用它。（如果不是位于栈顶，还是会新建一个实例）<br><img src="http://taojunyu.com/img/singleTop" alt=""></p>
 <h3 id="singleTask"><a href="#singleTask" class="headerlink" title="singleTask"></a>singleTask</h3><p>每次启动该activity时都会检查返回栈中是否存在该实例。如果存在就将此activity上的所有活动出栈。如果没有就创建该activity的新实例。<br><img src="http://taojunyu.com/img/singleTask" alt=""></p>
@@ -405,19 +405,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github pages, blogger</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node.js， javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node.js, javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">自述</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github pages, blogger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node.js， javascript</a>
               </li>
             
             <div class="clearfix"></div>

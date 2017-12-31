@@ -177,17 +177,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。<br><br>activity有四种启动模式：standard、singleTop、singleTask、singleInstance。</p>
-<h3 id="standard"><a href="#standard" class="headerlink" title="standard"></a>standard</h3><p>activity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会在乎栈中是否已经存在此activity，每次都会生成新的实例。<br><img src="http://taojunyu.com/img/standard" alt=""></p>
-<h3 id="singleTop"><a href="#singleTop" class="headerlink" title="singleTop"></a>singleTop</h3><p>当发现启动的activity已经位于栈顶的时候就不再创建新实例，而是直接使用它。（如果不是位于栈顶，还是会新建一个实例）<br><img src="http://taojunyu.com/img/singleTop" alt=""></p>
-<h3 id="singleTask"><a href="#singleTask" class="headerlink" title="singleTask"></a>singleTask</h3><p>每次启动该activity时都会检查返回栈中是否存在该实例。如果存在就将此activity上的所有活动出栈。如果没有就创建该activity的新实例。<br><img src="http://taojunyu.com/img/singleTask" alt=""></p>
-<h3 id="singleInstance"><a href="#singleInstance" class="headerlink" title="singleInstance"></a>singleInstance</h3><p>在此模式下会创建新的单独的返回栈，可以把该activity的实例共享给其他程序，不管哪个程序想要访问这个活动都共用一个返回栈。如图，activity1启动指定为singleInstance模式的activity2，activity2启动activity3，当返回时，activity3直接返回activity1然后才到activity2.<br><img src="http://taojunyu.com/img/singleInstance" alt=""></p>
-<h2 id="一键退出应用实现"><a href="#一键退出应用实现" class="headerlink" title="一键退出应用实现"></a>一键退出应用实现</h2><h3 id="一、设置一个专门的集合类管理所有activity"><a href="#一、设置一个专门的集合类管理所有activity" class="headerlink" title="一、设置一个专门的集合类管理所有activity"></a>一、设置一个专门的集合类管理所有activity</h3><p>如设置一个ActivityCollector类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityCollector</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Activity&gt; activities = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.add(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">removeActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.remove(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">finishAll</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (Activity activity : activities) &#123;</div><div class="line">            <span class="keyword">if</span> (!activity.isFinishing()) &#123;</div><div class="line">                activity.finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        activities.clear();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="二、设置一个父类嵌在原生父类和项目activity之间。"><a href="#二、设置一个父类嵌在原生父类和项目activity之间。" class="headerlink" title="二、设置一个父类嵌在原生父类和项目activity之间。"></a>二、设置一个父类嵌在原生父类和项目activity之间。</h3><p>如设置一个BaseActivity类：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        Log.d(<span class="string">"BaseActivity"</span>, getClass().getSimpleName());</div><div class="line">        ActivityCollector.addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        ActivityCollector.removeActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>所有activity继承于这个BaseActivity，每次新建activity时都会向集合类内增加该activity。</p>
-<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p>之后在无论什么地方只要调用<br>ActivityCollector.finishAll()<br>就可以直接退出了</p>
-
+        <p>Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。<br><br>activity有四种启动模式：standard、singleTop、singleTask、singleInstance。<br>
+        
+          <a class="article-more-a" href="/2017/12/31/Android中activity的四种启动模式/#more">more >></a>
+        
       
 
       
@@ -786,19 +779,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github pages, blogger</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node.js， javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node.js, javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">自述</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github pages, blogger</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node.js， javascript</a>
               </li>
             
             <div class="clearfix"></div>
