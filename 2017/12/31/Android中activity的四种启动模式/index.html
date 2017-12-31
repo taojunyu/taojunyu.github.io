@@ -6,14 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/10 | 陶俊宇的主页</title>
+  <title>Android的四种启动模式 | 陶俊宇的主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="陶俊宇的主页">
-<meta property="og:url" content="http://yoursite.com/archives/2017/10/index.html">
+  <meta name="description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。 standardactivity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android的四种启动模式">
+<meta property="og:url" content="http://yoursite.com/2017/12/31/Android中activity的四种启动模式/index.html">
 <meta property="og:site_name" content="陶俊宇的主页">
+<meta property="og:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。 standardactivity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会">
+<meta property="og:image" content="http://taojunyu.com/img/standard">
+<meta property="og:image" content="http://taojunyu.com/img/singleTop">
+<meta property="og:image" content="http://taojunyu.com/img/singleTask">
+<meta property="og:image" content="http://taojunyu.com/img/singleInstance">
+<meta property="og:updated_time" content="2017-12-31T16:56:22.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陶俊宇的主页">
+<meta name="twitter:title" content="Android的四种启动模式">
+<meta name="twitter:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。 standardactivity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会">
+<meta name="twitter:image" content="http://taojunyu.com/img/standard">
   
     <link rel="alternative" href="/atom.xml" title="陶俊宇的主页" type="application/atom+xml">
   
@@ -155,98 +164,151 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android中activity的四种启动模式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/19/我的简历/" class="archive-article-date">
-  	<time datetime="2017-10-18T16:05:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/19/我的简历/">我的简历</a>
+    <h1 class="article-title" itemprop="name">
+      Android的四种启动模式
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">自述</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/17/简程android客户端实现/" class="archive-article-date">
-  	<time datetime="2017-10-16T16:37:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-17</time>
+        
+        <a href="/2017/12/31/Android中activity的四种启动模式/" class="archive-article-date">
+  	<time datetime="2017-12-31T15:02:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
 </a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。<br><br>activity有四种启动模式：standard、singleTop、singleTask、singleInstance。</p>
+<h3 id="standard"><a href="#standard" class="headerlink" title="standard"></a>standard</h3><p>activity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会在乎栈中是否已经存在此activity，每次都会生成新的实例。<br><img src="http://taojunyu.com/img/standard" alt=""></p>
+<h3 id="singleTop"><a href="#singleTop" class="headerlink" title="singleTop"></a>singleTop</h3><p>当发现启动的activity已经位于栈顶的时候就不再创建新实例，而是直接使用它。（如果不是位于栈顶，还是会新建一个实例）<br><img src="http://taojunyu.com/img/singleTop" alt=""></p>
+<h3 id="singleTask"><a href="#singleTask" class="headerlink" title="singleTask"></a>singleTask</h3><p>每次启动该activity时都会检查返回栈中是否存在该实例。如果存在就将此activity上的所有活动出栈。如果没有就创建该activity的新实例。<br><img src="http://taojunyu.com/img/singleTask" alt=""></p>
+<h3 id="singleInstance"><a href="#singleInstance" class="headerlink" title="singleInstance"></a>singleInstance</h3><p>在此模式下会创建新的单独的返回栈，可以把该activity的实例共享给其他程序，不管哪个程序想要访问这个活动都共用一个返回栈。如图，activity1启动指定为singleInstance模式的activity2，activity2启动activity3，当返回时，activity3直接返回activity1然后才到activity2.<br><img src="http://taojunyu.com/img/singleInstance" alt=""></p>
+<h2 id="一键退出应用实现"><a href="#一键退出应用实现" class="headerlink" title="一键退出应用实现"></a>一键退出应用实现</h2><h3 id="一、设置一个专门的集合类管理所有activity"><a href="#一、设置一个专门的集合类管理所有activity" class="headerlink" title="一、设置一个专门的集合类管理所有activity"></a>一、设置一个专门的集合类管理所有activity</h3><p>如设置一个ActivityCollector类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityCollector</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Activity&gt; activities = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.add(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">removeActivity</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">        activities.remove(activity);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">finishAll</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (Activity activity : activities) &#123;</div><div class="line">            <span class="keyword">if</span> (!activity.isFinishing()) &#123;</div><div class="line">                activity.finish();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        activities.clear();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="二、设置一个父类嵌在原生父类和项目activity之间。"><a href="#二、设置一个父类嵌在原生父类和项目activity之间。" class="headerlink" title="二、设置一个父类嵌在原生父类和项目activity之间。"></a>二、设置一个父类嵌在原生父类和项目activity之间。</h3><p>如设置一个BaseActivity类：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        Log.d(<span class="string">"BaseActivity"</span>, getClass().getSimpleName());</div><div class="line">        ActivityCollector.addActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onDestroy();</div><div class="line">        ActivityCollector.removeActivity(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>所有activity继承于这个BaseActivity，每次新建activity时都会向集合类内增加该activity。</p>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p>之后在无论什么地方只要调用<br>ActivityCollector.finishAll()<br>就可以直接退出了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/17/简程android客户端实现/">简程android客户端实现</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/31/Android中activity的四种启动模式/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/12/27/Android中activity的生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android中activity的生命周期</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  <div id="SOHUCS" sid="Android中activity的四种启动模式" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+  
 
 
           </div>
@@ -269,8 +331,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
