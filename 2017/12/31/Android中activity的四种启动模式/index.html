@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Android的四种启动模式 | 陶俊宇的主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。 standardactivity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会">
+  <meta name="description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。">
 <meta name="keywords" content="android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android的四种启动模式">
 <meta property="og:url" content="http://yoursite.com/2017/12/31/Android中activity的四种启动模式/index.html">
 <meta property="og:site_name" content="陶俊宇的主页">
-<meta property="og:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。 standardactivity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会">
+<meta property="og:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。">
 <meta property="og:image" content="http://taojunyu.com/img/standard.JPG">
 <meta property="og:image" content="http://taojunyu.com/img/singleTop.JPG">
 <meta property="og:image" content="http://taojunyu.com/img/singleTask.JPG">
 <meta property="og:image" content="http://taojunyu.com/img/singleInstance.JPG">
-<meta property="og:updated_time" content="2017-12-31T17:04:42.322Z">
+<meta property="og:updated_time" content="2017-12-31T17:09:21.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android的四种启动模式">
-<meta name="twitter:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。 standardactivity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会">
+<meta name="twitter:description" content="Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。activity有四种启动模式：standard、singleTop、singleTask、singleInstance。">
 <meta name="twitter:image" content="http://taojunyu.com/img/standard.JPG">
   
     <link rel="alternative" href="/atom.xml" title="陶俊宇的主页" type="application/atom+xml">
@@ -185,7 +185,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。<br><br>activity有四种启动模式：standard、singleTop、singleTask、singleInstance。<br><!--查看详情--></p>
+        <p>Android中使用返回栈管理activity，显示位于栈顶的activity，对于不同的activity可能会指定不同的启动模式。<br><br>activity有四种启动模式：standard、singleTop、singleTask、singleInstance。<br><a id="more"></a></p>
 <h3 id="standard"><a href="#standard" class="headerlink" title="standard"></a>standard</h3><p>activity在未显式指定的情况下都是默认使用这种模式。在此模式中，每当启动一个新的activity时就会把它放入返回栈，不会在乎栈中是否已经存在此activity，每次都会生成新的实例。<br><img src="http://taojunyu.com/img/standard.JPG" alt=""></p>
 <h3 id="singleTop"><a href="#singleTop" class="headerlink" title="singleTop"></a>singleTop</h3><p>当发现启动的activity已经位于栈顶的时候就不再创建新实例，而是直接使用它。（如果不是位于栈顶，还是会新建一个实例）<br><img src="http://taojunyu.com/img/singleTop.JPG" alt=""></p>
 <h3 id="singleTask"><a href="#singleTask" class="headerlink" title="singleTask"></a>singleTask</h3><p>每次启动该activity时都会检查返回栈中是否存在该实例。如果存在就将此activity上的所有活动出栈。如果没有就创建该activity的新实例。<br><img src="http://taojunyu.com/img/singleTask.JPG" alt=""></p>
